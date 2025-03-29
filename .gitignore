@@ -1,0 +1,7 @@
+debug.log
+spring
+*.exe
+*.zip
+*.xml
+*.gradle
+*.json
