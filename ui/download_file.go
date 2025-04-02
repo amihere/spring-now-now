@@ -3,8 +3,8 @@ package ui
 import (
 	"strings"
 
-	tea "github.com/charmbracelet/bubbletea"
 	"github.com/amihere/spring-now-now/springboot"
+	tea "github.com/charmbracelet/bubbletea"
 )
 
 type errMsg struct{ error }
@@ -18,8 +18,8 @@ func (m Model) downloadFileMsg() tea.Msg {
 		Type:         m.Type,
 		BootVersion:  m.BootVersion,
 		Language:     m.Language,
-		GroupId:      m.GroupId,
-		ArtifactId:   m.ArtifactId,
+		GroupId:      m.GroupID,
+		ArtifactId:   m.ArtifactID,
 		Name:         m.Name,
 		Description:  m.Description,
 		PackageName:  m.PackageName,

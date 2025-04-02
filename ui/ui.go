@@ -3,15 +3,17 @@ package ui
 import (
 	"fmt"
 
+	"github.com/amihere/spring-now-now/style"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/amihere/spring-now-now/style"
 )
 
+// Init
 func (m Model) Init() tea.Cmd {
 	return textinput.Blink
 }
 
+// Update
 func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
@@ -41,6 +43,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
+// View
 func (m Model) View() string {
 	if m.quitting {
 		if m.failed {

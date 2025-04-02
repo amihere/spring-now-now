@@ -18,14 +18,14 @@ func (m Model) updateMetaData(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 		case tea.KeyEnter, tea.KeyCtrlS:
 			if m.focused == len(m.inputs)-1 || msg.Type == tea.KeyCtrlS {
-				input := m.inputs[groupId].Value()
+				input := m.inputs[groupID].Value()
 				if input != "" {
-					m.GroupId = input
+					m.GroupID = input
 				}
 
-				input = m.inputs[artifactId].Value()
+				input = m.inputs[artifactID].Value()
 				if input != "" {
-					m.ArtifactId = input
+					m.ArtifactID = input
 				}
 
 				input = m.inputs[applicationName].Value()
@@ -100,9 +100,9 @@ func (m Model) viewMetaData() string {
 `,
 		style.TitleStyle.Render("Project Metadata"),
 		style.InputTitleStyle.Width(60).Render("Group ID"),
-		m.inputs[groupId].View(),
+		m.inputs[groupID].View(),
 		style.InputTitleStyle.Width(60).Render("Artifact ID"),
-		m.inputs[artifactId].View(),
+		m.inputs[artifactID].View(),
 		style.InputTitleStyle.Width(60).Render("Application Name"),
 		m.inputs[applicationName].View(),
 		style.InputTitleStyle.Width(60).Render("Description"),

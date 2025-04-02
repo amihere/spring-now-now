@@ -21,21 +21,22 @@ const (
 )
 
 const (
-	groupId = iota
-	artifactId
+	groupID = iota
+	artifactID
 	applicationName
 	description
 	packageName
 	version
 )
 
+// Model
 type Model struct {
 	list         list.Model
 	Type         string
 	BootVersion  string
 	Language     string
-	GroupId      string
-	ArtifactId   string
+	GroupID      string
+	ArtifactID   string
 	Name         string
 	Description  string
 	PackageName  string
@@ -69,19 +70,19 @@ func NewModel() *Model {
 
 	inputs := make([]textinput.Model, 6)
 
-	inputs[groupId] = textinput.New()
-	inputs[groupId].Placeholder = sp.GroupID.Default
-	inputs[groupId].SetValue(sp.GroupID.Default)
-	inputs[groupId].Focus()
-	inputs[groupId].Width = 60
-	inputs[groupId].Prompt = ""
+	inputs[groupID] = textinput.New()
+	inputs[groupID].Placeholder = sp.GroupID.Default
+	inputs[groupID].SetValue(sp.GroupID.Default)
+	inputs[groupID].Focus()
+	inputs[groupID].Width = 60
+	inputs[groupID].Prompt = ""
 
-	inputs[artifactId] = textinput.New()
-	inputs[artifactId].Placeholder = sp.ArtifactID.Default
-	inputs[artifactId].SetValue(sp.ArtifactID.Default)
-	inputs[artifactId].Focus()
-	inputs[artifactId].Width = 60
-	inputs[artifactId].Prompt = ""
+	inputs[artifactID] = textinput.New()
+	inputs[artifactID].Placeholder = sp.ArtifactID.Default
+	inputs[artifactID].SetValue(sp.ArtifactID.Default)
+	inputs[artifactID].Focus()
+	inputs[artifactID].Width = 60
+	inputs[artifactID].Prompt = ""
 
 	inputs[applicationName] = textinput.New()
 	inputs[applicationName].Placeholder = sp.Name.Default
@@ -116,8 +117,8 @@ func NewModel() *Model {
 		JavaVersion:  sp.JavaVersion.Default,
 		Language:     sp.Language.Default,
 		BootVersion:  sp.BootVersion.Default,
-		GroupId:      sp.GroupID.Default,
-		ArtifactId:   sp.ArtifactID.Default,
+		GroupID:      sp.GroupID.Default,
+		ArtifactID:   sp.ArtifactID.Default,
 		Name:         sp.Name.Default,
 		Description:  sp.Description.Default,
 		PackageName:  sp.PackageName.Default,
